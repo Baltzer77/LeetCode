@@ -14,7 +14,6 @@ public:
             last_digit = (last_digit * 2 + nums[i]) % 10;    
             result[i] = last_digit % 5 == 0;
         }
-
        return result;
     }
 };
