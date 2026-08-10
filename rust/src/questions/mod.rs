@@ -1,16 +1,15 @@
-pub mod q1563_stone_game_v;
+pub mod q1686_stone_game_vi;
 
 pub fn run() {
-    test(vec![6,2,3,4,5,5], 18);
-    test(vec![7,7,7,7,7,7,7], 28);
-    test(vec![4], 0);
-    test(vec![2, 1, 1], 3);
+    test(vec![1,3], vec![2,1], 1);
+    test(vec![1,2], vec![3,1], 0);
+    test(vec![2,4,3], vec![1,6,7], -1);
 
     println!("Passed all tests!");
 }
 
-fn test(input: Vec<i32>, answer: i32) {
-    println!("stone_value: {input:?}, answer = {answer}");
-    let res = q1563_stone_game_v::Solution::stone_game_v(input);
+fn test(input1: Vec<i32>, input2: Vec<i32>, answer: i32) {
+    println!("alice_values: {input1:?}, bob_values: {input2:?} answer = {answer}");
+    let res = q1686_stone_game_vi::Solution::stone_game_vi(input1, input2);
     assert_eq!(res, answer);
 }
