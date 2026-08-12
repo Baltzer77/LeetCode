@@ -1,15 +1,21 @@
-pub mod q1686_stone_game_vi;
+pub mod q32_longest_valid_parentheses;
 
 pub fn run() {
-    test(vec![1,3], vec![2,1], 1);
-    test(vec![1,2], vec![3,1], 0);
-    test(vec![2,4,3], vec![1,6,7], -1);
+    test("(()", 2);
+    test(")()())",4);
+    test("()(()",2);
+    test(")(((((()())()()))()(()))(",22);
+    test("",0);
+    test("(()()",4);
+    test("(()()(())((",8);
+    test(")))(((()()",4);
+    test("()((())()",6);
 
     println!("Passed all tests!");
 }
 
-fn test(input1: Vec<i32>, input2: Vec<i32>, answer: i32) {
-    println!("alice_values: {input1:?}, bob_values: {input2:?} answer = {answer}");
-    let res = q1686_stone_game_vi::Solution::stone_game_vi(input1, input2);
+fn test(input: &str, answer: i32) {
+    println!("input: {input:?}, answer = {answer}");
+    let res = q32_longest_valid_parentheses::Solution::longest_valid_parentheses(String::from(input));
     assert_eq!(res, answer);
 }
