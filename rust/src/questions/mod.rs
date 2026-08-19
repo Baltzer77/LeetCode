@@ -1,4 +1,4 @@
-#[path = "q2029_stone_game_ix.rs"]
+#[path = "q1386_cinema_seat_allocation.rs"]
 mod question;
 
 pub fn run() {
